@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style type="text/css">
+
+    .drag{
+        position:relative;
+        cursor:hand;
+        z-index: 100;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+    }
+    .myTeam{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+</style>
+<script type="text/javascript">
+    var dragobject={
+        z: 0, x: 0, y: 0, offsetx : null, offsety : null, targetobj : null, dragapproved : 0,
+        initialize:function(){
+            document.onmousedown=this.drag
+            document.onmouseup=function(){this.dragapproved=0}
+        },
+        drag:function(e){
+            var evtobj=window.event? window.event : e
+            this.targetobj=window.event? event.srcElement : e.target
+            if (this.targetobj.className=="drag"){
+                this.dragapproved=1
+                if (isNaN(parseInt(this.targetobj.style.left))){this.targetobj.style.left=0}
+                if (isNaN(parseInt(this.targetobj.style.top))){this.targetobj.style.top=0}
+                this.offsetx=parseInt(this.targetobj.style.left)
+                this.offsety=parseInt(this.targetobj.style.top)
+                this.x=evtobj.clientX
+                this.y=evtobj.clientY
+                if (evtobj.preventDefault)
+                    evtobj.preventDefault()
+                document.onmousemove=dragobject.moveit
+            }
+        },
+        moveit:function(e){
+            var evtobj=window.event? window.event : e
+            if (this.dragapproved==1){
+                this.targetobj.style.left=this.offsetx+evtobj.clientX-this.x+"px"
+                this.targetobj.style.top=this.offsety+evtobj.clientY-this.y+"px"
+                return false
+            }
+        }
+    }
+    dragobject.initialize()
+</script>
+
+<div class="myTeam">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+    <img src="img/myTeam.png" class="drag">
+</div>
+
+</body>
+</html>
