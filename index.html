@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Next Coach</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--TOP BAR-->
+    <div class="navbar-static-top navbar-inverse">
+        <div class="containerHead">
+            <div class="navbar-brand">
+                <img src='http://imagizer.imageshack.us/v2/150x100q90/705/url2p.jpg' class="img-circle" height="35" width="35">
+                Coach Name
+                <a class="menu-toggle" href="#">&#9776</a>
+            </div>
+            <div class="collapse navbar-collapse navHeaderCollapse">
+                <div class="nav navbar-nav navbar-right">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">User</a></li>
+                </div>
+
+                <div class="clube">
+                    Clube do Treinador
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SIDE BAR-->
+    <div class="navbar">
+        <nav>
+            <a onclick="toHome()">Home</a>
+            <a onclick="toExercise()">Exercicio</a>
+            <a onclick="toJogada()">Jogada</a>
+            <a onclick="toVideo()">Video</a>
+            <a onclick="toStates()">Estatísticas</a>
+        </nav>
+    </div>
+
+    <!--BODY-->
+
+    <div id="siteBody" class="container" style="margin: 5px">
+        <div class="title">
+            <h1>Calendario</h1>
+        </div>
+        <div class="col-md-4">
+            <div class="painel">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">Panel heading without title</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-md-4">
+            <div id="calendar">
+                <body onload="toCalendar()"></body>
+            </div>
+        </div>-->
+    </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var menu = "close";
+
+        $('.menu-toggle').click(function() {
+
+            if(menu == "close") {
+                $('.navbar').css('-webkit-transform', 'translate(0, 0)');
+                $('.container').css('-webkit-transform', 'translate(20%, 0)');
+                menu = "open";
+            } else {
+                $('.navbar').css('-webkit-transform', 'translate(-100%, 0)');
+                $('.container').css('-webkit-transform', 'translate(0, 0)');
+                menu = "close";
+            }
+
+        });
+
+    });
+</script>
+
+
+</body>
+</html>

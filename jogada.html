@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Next Coach</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link type="text/css" rel="stylesheet" src="css/bootstrap.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 class="page-header">
+        Inserir Jogada
+        <small>(Crie uma jogada e adicione as suas Informaçoes)</small>
+    </h2>
+
+    <div class="painel">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="divExerciseName" class="col-lg-12"><p><input id="exerciseName" class="form-control" type="text" name="name" placeholder="Nome"/></p></div>
+                <div id="divExerciseDescription" class="col-lg-12"><p><textarea id="exerciseDescription" class="form-control" rows="10" name="description" placeholder="Descrição" maxlength="1000"></textarea></p></div>
+                <div id="foco" class="col-lg-12">
+                    Foco
+                    <select>
+                        <option value="defensivo">Defensivo</option>
+                        <option value="atacante">Atacante</option>
+                        <option value="coesão equipa">Coesão Equipa</option>
+                        <option value="ritmico">Ritmico</option>
+                        <option value="aquecimento">Aquecimento</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <div id="yourTeam">
+                    <a onclick="toDragYour()">Add OPPOSITE players</a>
+                </div>
+                <div id="divfield">
+                    <img src="img/handball-field.jpg" width="640" height="401" align="rigth">
+                </div>
+                <div id="myTeam">
+                    <a onclick="toDragMy()">Add YOUR players</a>
+                </div>
+                <div class="saveButton">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+</html>
